@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KomikoID MTL</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div class="brand-info">
+          <span class="title">KomikoID MTL</span>
+          <span class="badge">Image AI</span>
+        </div>
+      </div>
+      <div class="status-indicator" id="statusIndicator" title="Cek status backend">
+        <span class="status-dot"></span>
+        <span class="status-text" id="statusText">Cek...</span>
+      </div>
+    </header>
+
+    <!-- Primary Actions -->
+    <section class="section-actions">
+      <button class="btn btn-primary" id="btnTranslateAll">
+        <span class="btn-icon">⚡</span>
+        <span class="btn-label">Terjemahkan Chapter Ini</span>
+      </button>
+      <button class="btn btn-secondary" id="btnResetAll">
+        <span class="btn-icon">🔄</span>
+        <span class="btn-label">Reset ke Gambar Asli</span>
+      </button>
+    </section>
+
+    <!-- Live Stats -->
+    <div class="stats-card">
+      <div class="stat-item">
+        <span class="stat-value" id="statPageCount">0</span>
+        <span class="stat-label">Gambar Terdeteksi</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value" id="statTranslatedCount">0</span>
+        <span class="stat-label">Diterjemahkan</span>
+      </div>
+    </div>
+
+    <!-- Configuration Options -->
+    <section class="section-settings">
+      <div class="form-group">
+        <label for="targetLanguage">Bahasa Target</label>
+        <select id="targetLanguage" class="form-select">
+          <option value="id" selected>Bahasa Indonesia (ID)</option>
+          <option value="en">English (EN)</option>
+          <option value="es">Español (ES)</option>
+          <option value="pt">Português (PT)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sourceLanguage">Bahasa Sumber Komik</label>
+        <select id="sourceLanguage" class="form-select">
+          <option value="auto" selected>Otomatis Deteksi</option>
+          <option value="ja">Jepang (Manga)</option>
+          <option value="ko">Korea (Manhwa)</option>
+          <option value="zh">Mandarin (Manhua)</option>
+          <option value="en">Inggris (Komik Barat)</option>
+        </select>
+      </div>
+
+      <div class="form-toggle">
+        <div class="toggle-info">
+          <span class="toggle-title">Auto-Translate saat Buka Chapter</span>
+          <span class="toggle-desc">Terjemahkan semua panel otomatis begitu chapter dibuka</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleAutoTranslate">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="shortcut-hint">Shortcut: <strong>Alt + T</strong> untuk translate cepat</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

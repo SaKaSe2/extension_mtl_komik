@@ -1,0 +1,26 @@
+{
+    "intelephense.environment.phpVersion": "8.2.0",
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/vendor/**/{Tests,tests}/**",
+        "**/.history/**"
+    ],
+    "php.validate.executablePath": "php",
+    "php.validate.enable": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedTypes": false,
+    "intelephense.diagnostics.undefinedFunctions": false,    
+    "php.suggest.basic": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/vendor": true,
+        "**/Backend-KomikoID-MTL/vendor": true
+    }
+}

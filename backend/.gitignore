@@ -1,0 +1,121 @@
+# =========================
+# Laravel Backend .gitignore
+# =========================
+
+# Laravel specific
+/vendor/
+/node_modules/
+/public/hot
+/public/storage
+/storage/*.key
+/storage/app/fonts/*.ttf
+/storage/app/public/comics/
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+
+# Environment files
+.env
+.env.*
+.env.example
+.env.backup
+.env.production
+.env.local
+.env.*.local
+
+# IDE and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+storage/logs/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+out.txt
+err.log
+
+# Script sampah lokal (bukan bagian dari source code)
+check_translation.php
+cleanup_chapters.php
+docker_pull.py
+
+# Dokumentasi legacy (sudah tidak relevan)
+/document/
+
+# Cache and compiled files
+/bootstrap/cache/*.php
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Testing
+/coverage/
+.phpunit.cache/
+/tests/manual/
+tests/manual/
+
+# Build files
+/public/build/
+
+# Python OCR
+python_ocr/__pycache__/
+python_ocr/*.pyc
+python_ocr/venv/
+python_ocr/.venv/
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# AI Models (large files)
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Security - never commit these
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Misc
+.phpunit.result.cache
+phpunit.xml

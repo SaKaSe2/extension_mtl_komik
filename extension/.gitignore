@@ -1,0 +1,29 @@
+# ===============================
+# KomikoID Chrome Extension .gitignore
+# ===============================
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Chrome Extension build / zip packages
+*.zip
+*.crx
+*.pem
+
+# Local configuration overrides & logs
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Node / Scratch tools / Residual scripts
+node_modules/
+scripts/
+*.php
+

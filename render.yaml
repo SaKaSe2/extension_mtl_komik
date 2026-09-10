@@ -1,0 +1,64 @@
+services:
+  - type: web
+    name: komikoid-backend
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free
+    region: singapore
+    healthCheckPath: /api/v1/extension/health
+    envVars:
+      - key: APP_NAME
+        value: KomikoID-MTL
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "true"
+      - key: APP_KEY
+        value: base64:ffbkD2EFa54aM2q0CvqJaGdOrxxAl0ZlRAcD+b47eYU=
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: debug
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: aws-0-ap-northeast-2.pooler.supabase.com
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_DATABASE
+        value: postgres
+      - key: DB_USERNAME
+        value: postgres.vaykimgmaebiruwkcbsw
+      - key: DB_PASSWORD
+        sync: false
+      - key: SESSION_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: GROQ_MAX_TOKENS
+        value: "2000"
+      - key: OCR_DEFAULT_ENGINE
+        value: google_vision
+      - key: TRANSLATOR_DEFAULT_PROVIDER
+        value: groq
+
+      # Backblaze B2 Storage — isi manual di Render dashboard
+      - key: B2_KEY_ID
+        sync: false
+      - key: B2_APPLICATION_KEY
+        sync: false
+      - key: B2_BUCKET_NAME
+        sync: false
+      - key: B2_REGION
+        value: us-east-005
+      - key: B2_ENDPOINT
+        sync: false
+      - key: B2_SIGNED_URL_EXPIRY_HOURS
+        value: "24"
