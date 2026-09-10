@@ -7,8 +7,8 @@
 
 body {
   width: 320px;
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: #ffffff;
+  color: #111827;
   font-size: 13px;
   user-select: none;
 }
@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 12px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .brand {
@@ -35,18 +35,12 @@ body {
   gap: 10px;
 }
 
+/* Logo pakai ikon asli, bukan teks */
 .logo {
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, #6366f1, #f43f5e);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 15px;
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+  object-fit: contain;
 }
 
 .brand-info {
@@ -58,17 +52,17 @@ body {
 .title {
   font-weight: 700;
   font-size: 14px;
-  color: #f8fafc;
+  color: #111827;
 }
 
 .badge {
   font-size: 10px;
   font-weight: 600;
-  background: rgba(99, 102, 241, 0.2);
-  color: #818cf8;
+  background: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
   padding: 2px 6px;
   border-radius: 6px;
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.25);
 }
 
 /* Status Indicator */
@@ -76,17 +70,18 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #1e293b;
+  background: #f3f4f6;
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 11px;
+  color: #374151;
 }
 
 .status-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #94a3b8;
+  background-color: #9ca3af;
 }
 
 .status-indicator.connected .status-dot {
@@ -103,7 +98,21 @@ body {
 .section-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+
+/* Grouped button: dua tombol dalam satu border */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Garis pemisah antar tombol di dalam grup */
+.btn-group-divider {
+  height: 1px;
+  background: #d1d5db;
 }
 
 .btn {
@@ -112,57 +121,48 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 10px 14px;
-  border-radius: 8px;
   border: none;
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.15s ease;
+  width: 100%;
+  border-radius: 0;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  background: #ffffff;
+  color: #4f46e5;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #4338ca, #4f46e5);
-  transform: translateY(-1px);
+  background: #f5f3ff;
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  background: #ede9fe;
 }
 
 .btn-secondary {
-  background: #1e293b;
-  color: #cbd5e1;
-  border: 1px solid #334155;
+  background: #ffffff;
+  color: #374151;
 }
 
 .btn-secondary:hover {
-  background: #334155;
-  color: #f8fafc;
+  background: #f9fafb;
 }
 
-.btn-sm {
-  padding: 6px 12px;
-  background: #334155;
-  color: #f8fafc;
-}
-
-.btn-sm:hover {
-  background: #475569;
+.btn-secondary:active {
+  background: #f3f4f6;
 }
 
 /* Stats Card */
 .stats-card {
   display: flex;
-  background: #1e293b;
+  background: #f9fafb;
   border-radius: 8px;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #e5e7eb;
 }
 
 .stat-item {
@@ -176,17 +176,17 @@ body {
 .stat-value {
   font-size: 16px;
   font-weight: 700;
-  color: #6366f1;
+  color: #4f46e5;
 }
 
 .stat-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: #6b7280;
 }
 
 .stat-divider {
   width: 1px;
-  background: #334155;
+  background: #e5e7eb;
   margin: 2px 0;
 }
 
@@ -206,16 +206,16 @@ body {
 .form-group label {
   font-size: 11px;
   font-weight: 500;
-  color: #94a3b8;
+  color: #6b7280;
 }
 
 .form-select, .form-input {
   width: 100%;
   padding: 7px 10px;
-  background: #1e293b;
-  border: 1px solid #334155;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
   border-radius: 6px;
-  color: #f8fafc;
+  color: #111827;
   font-size: 12px;
   outline: none;
   transition: border-color 0.2s;
@@ -225,19 +225,15 @@ body {
   border-color: #6366f1;
 }
 
-.input-action-group {
-  display: flex;
-  gap: 6px;
-}
-
 /* Toggle Switch */
 .form-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px;
-  background: #1e293b;
+  background: #f9fafb;
   border-radius: 6px;
+  border: 1px solid #e5e7eb;
 }
 
 .toggle-info {
@@ -248,12 +244,12 @@ body {
 .toggle-title {
   font-size: 11px;
   font-weight: 600;
-  color: #f8fafc;
+  color: #111827;
 }
 
 .toggle-desc {
   font-size: 9px;
-  color: #94a3b8;
+  color: #6b7280;
 }
 
 .switch {
@@ -273,7 +269,7 @@ body {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #334155;
+  background-color: #d1d5db;
   transition: .3s;
   border-radius: 18px;
 }
@@ -298,27 +294,18 @@ input:checked + .slider:before {
   transform: translateX(16px);
 }
 
-/* Details */
-details summary {
-  font-size: 11px;
-  color: #818cf8;
-  cursor: pointer;
-  outline: none;
-  padding: 4px 0;
-}
-
 /* Footer */
 .footer {
   text-align: center;
   padding-top: 8px;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #e5e7eb;
 }
 
 .shortcut-hint {
   font-size: 10px;
-  color: #64748b;
+  color: #9ca3af;
 }
 
 .shortcut-hint strong {
-  color: #94a3b8;
+  color: #6b7280;
 }
