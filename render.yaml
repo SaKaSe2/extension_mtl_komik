@@ -15,7 +15,7 @@ services:
       - key: APP_DEBUG
         value: "true"
       - key: APP_KEY
-        value: base64:ffbkD2EFa54aM2q0CvqJaGdOrxxAl0ZlRAcD+b47eYU=
+        sync: false  # Isi manual di Render dashboard, jangan hardcode di sini
       - key: LOG_CHANNEL
         value: stderr
       - key: LOG_LEVEL
